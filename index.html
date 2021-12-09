@@ -9,9 +9,31 @@
 </head>
 <body>
     <div class="outer">
-        <div class="card">
-            <img src="600x400.jpg" alt="">
+        <div class="card"  id="mainCard">
+            <div class="card-inner">
+                <div class="card-front">        
+                    <img src="600x400.jpg" alt="">
+                </div>
+                <div class="card-back">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, molestias. Excepturi commodi sunt hic ipsam quas, consequatur amet corporis incidunt asperiores optio rem voluptatem perspiciatis cum maxime laudantium quidem facere?</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </html>
+<script>
+    $(function() {
+        $('.card').on('click', function()
+        {
+            $(this).toggleClass('flip')
+        });
+    });
+    $(function() {
+        $('.card-front').on('click', function()
+        {
+            $(this).toggleClass('flip')
+        });
+    });
+</script>
