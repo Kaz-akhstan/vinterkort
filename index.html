@@ -5,35 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Vinterkort</title>
+    <title>Document</title>
 </head>
 <body>
-    <div class="outer">
-        <div class="card"  id="mainCard">
-            <div class="card-inner">
-                <div class="card-front">        
-                    <img src="600x400.jpg" alt="">
-                </div>
-                <div class="card-back">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, molestias. Excepturi commodi sunt hic ipsam quas, consequatur amet corporis incidunt asperiores optio rem voluptatem perspiciatis cum maxime laudantium quidem facere?</p>
-                </div>
+    <div class="outer" data-tilt data-tilt-scale="1.25" id="yttre">
+        <div class="innerCard" id="inreKort">
+            <div class="frontCard">
+                <img src="600x400.jpg" alt="" onclick="turnPageFunc()">
+            </div>
+            <div class="backCard" onclick="turnPageFunc()">
+                Text här
             </div>
         </div>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="vanilla-tilt.js"></script>
 </html>
 <script>
-    $(function() {
-        $('.card').on('click', function()
+    var counter = 0;
+    function turnPageFunc()
+    {
+        counter++;
+        if(counter % 2 === 0)
         {
-            $(this).toggleClass('flip')
-        });
-    });
-    $(function() {
-        $('.card-front').on('click', function()
+            document.getElementById("inreKort").style.transform = 'rotateY(0deg)';
+        }
+        else
         {
-            $(this).toggleClass('flip')
-        });
-    });
+            document.getElementById("inreKort").style.transform = 'rotateY(180deg)';
+        }
+    }
 </script>
