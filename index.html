@@ -5,21 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <title>Vinterkort</title>
 </head>
 <body>
     <div class="outer" data-tilt data-tilt-scale="1.25" id="yttre">
         <div class="innerCard" id="inreKort">
             <div class="frontCard">
-                <img src="600x400.jpg" alt="" onclick="turnPageFunc()">
+                <img src="BG2.jpg" alt="" onclick="turnPageFunc()">
             </div>
             <div class="backCard" onclick="turnPageFunc()">
-                Text här
+                <div class="backText">
+                    God Jul
+                    <br>
+                    Önskar
+                    <p id="manuelInput"></p>
+                </div>
             </div>
         </div>
     </div>
+    <input type="text" placeholder="Namn" id="inmatning">
+    <input type="submit" onclick="angeNamn()">
 </body>
 <script src="vanilla-tilt.js"></script>
+<script src="particles.js"></script>
 </html>
 <script>
     var counter = 0;
@@ -34,5 +46,9 @@
         {
             document.getElementById("inreKort").style.transform = 'rotateY(180deg)';
         }
+    }
+    function angeNamn()
+    {
+        document.getElementById("manuelInput").innerHTML = document.getElementById("inmatning").value;
     }
 </script>
